@@ -50,7 +50,7 @@ model = Qwen2VLForConditionalGeneration.from_pretrained(
     device_map="auto",
     trust_remote_code=True,
 )
-
+ 
 # Load LoRA adapter
 model = PeftModel.from_pretrained(model, "HassanB4/Qari-OCR-LoRA")
 model.eval()
