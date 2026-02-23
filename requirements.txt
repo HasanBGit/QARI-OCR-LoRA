@@ -1,0 +1,28 @@
+# Core ML
+torch>=2.0.0
+torchvision>=0.17.0
+
+# Transformers ecosystem
+transformers>=4.45.0
+accelerate>=0.26.0
+datasets>=2.16.0
+
+# Qwen VL
+qwen-vl-utils==0.0.8
+
+# Training (LoRA/QLoRA)
+peft>=0.14.0
+bitsandbytes>=0.43.0
+
+# Utilities
+pillow>=10.0.0
+pandas>=2.0.0
+numpy>=1.26.0
+tqdm
+safetensors>=0.4.0
+
+# Metrics
+jiwer
+
+# Optional: Flash Attention 2 (install separately for faster attention)
+# pip install flash-attn --no-build-isolation
