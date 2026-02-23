@@ -1,3 +1,4 @@
+
 # Qari-OCR-LoRA: Additional Model for NakbaNLP 2026 Shared Task
 
 <p align="center">
@@ -8,12 +9,10 @@ This repository contains an **additional experimental model** — a LoRA fine-tu
 
 > **Note:** This is **not** our main submission. Our primary winning model is **[Ketaba-OCR](https://huggingface.co/HassanB4/Ketab-OCR-LoRA)** which achieved 1st place with CER 0.0819.
 
-#### By: [Hassan Barmandah](https://scholar.google.com/citations?user=XXXXX), [Fatimah Emad Eldin](https://scholar.google.com/citations?user=CfX6eA8AAAAJ&hl=ar), [Khloud Al Jallad](https://scholar.google.com/citations?user=XXXXX), [Omar Nacer](https://scholar.google.com/citations?user=XXXXX)
+#### By: [Hassan Barmandah](https://scholar.google.com/citations?user=2VzOr0kAAAAJ&hl=en), [Fatimah Emad Eldin](https://scholar.google.com/citations?user=CfX6eA8AAAAJ&hl=ar), [Khloud Al Jallad](https://scholar.google.com/citations?user=A0EvL6cAAAAJ&hl=ar), [Omar Nacer](https://scholar.google.com/citations?user=pezf5FYAAAAJ&hl=en)
 
 [![Main Model](https://img.shields.io/badge/Main_Model-Ketab--OCR-green)](https://huggingface.co/HassanB4/Ketab-OCR-LoRA)
 [![HuggingFace](https://img.shields.io/badge/HuggingFace-Page-F9D371)](https://huggingface.co/HassanB4/Qari-OCR-LoRA)
-[![License](https://img.shields.io/badge/License-Apache%202.0-lightgrey)](LICENSE)
-
 ---
 
 ## Model Description
@@ -188,3 +187,12 @@ If you use this work, please cite our main paper:
 ## 📄 License
 
 This project is licensed under the Apache 2.0 License.
+
+---
+
+### Framework Versions
+
+- **PEFT:** 0.14.0+
+- **Transformers:** 4.45.0+
+- **PyTorch:** 2.0.0+
+- **Python:** 3.9+
