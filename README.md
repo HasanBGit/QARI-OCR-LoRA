@@ -1,25 +1,26 @@
-
 # Qari-OCR-LoRA: Additional Model for NakbaNLP 2026 Shared Task
 
 <p align="center">
 <img src="https://placehold.co/800x200/e0f2fe/0369a1?text=Qari-Arabic-OCR" alt="Qari Arabic OCR">
 </p>
 
-This repository contains an **additional experimental model** — a LoRA fine-tuned **Qari-OCR** — developed during the **[NakbaNLP 2026 Shared Task](https://acrps.ai/nakba-nlp-manu-understanding-2026)** on Arabic Manuscript Understanding (Subtask 2: Systems Track).
+This repository contains an **additional experimental model** — a LoRA fine-tuned **Qari-OCR** — developed during the **[NakbaNLP 2026 Shared Task](https://acrps.ai/nakba-nlp-manu-understanding-2026)** (AR-MS) on Arabic Manuscript Understanding (Subtask 2: Systems Track).
 
-> **Note:** This is **not** our main submission. Our primary winning model is **[Ketaba-OCR](https://huggingface.co/HassanB4/Ketab-OCR-LoRA)** which achieved 1st place with CER 0.0819.
+> **Note:** This is **not** our main submission. Our primary model is **[Ketaba-OCR](https://huggingface.co/HassanB4/Ketaba-OCR-LoRA)**, which ranks **1st on per-line evaluation** (CER 0.0819, WER 0.2588) and **3rd on the official (corpus-wide) leaderboard** (CER 0.0938, WER 0.2996).
 
-#### By: [Hassan Barmandah](https://scholar.google.com/citations?user=2VzOr0kAAAAJ&hl=en), [Fatimah Emad Eldin](https://scholar.google.com/citations?user=CfX6eA8AAAAJ&hl=ar), [Khloud Al Jallad](https://scholar.google.com/citations?user=A0EvL6cAAAAJ&hl=ar), [Omar Nacer](https://scholar.google.com/citations?user=pezf5FYAAAAJ&hl=en)
+#### By: [Hassan Barmandah](https://scholar.google.com/citations?user=2VzOr0kAAAAJ&hl=en), [Fatimah Emad Eldin](https://scholar.google.com/citations?user=CfX6eA8AAAAJ&hl=ar), [Khloud Al Jallad](https://scholar.google.com/citations?user=A0EvL6cAAAAJ&hl=ar), [Omer Nacar](https://scholar.google.com/citations?user=pezf5FYAAAAJ&hl=en) — NAMAA Community (with Umm Al-Qura University, Trouve Labs, Syrian Society for Startups and Research, Tuwaiq Academy)
 
-[![Main Model](https://img.shields.io/badge/Main_Model-Ketab--OCR-green)](https://huggingface.co/HassanB4/Ketab-OCR-LoRA)
+[![Main Model](https://img.shields.io/badge/Main_Model-Ketaba--OCR-green)](https://huggingface.co/HassanB4/Ketaba-OCR-LoRA)
 [![HuggingFace](https://img.shields.io/badge/HuggingFace-Page-F9D371)](https://huggingface.co/HassanB4/Qari-OCR-LoRA)
+[![License](https://img.shields.io/badge/License-Apache%202.0-lightgrey)](LICENSE)
+
 ---
 
 ## Model Description
 
 This is an **additional experimental model** that fine-tunes **Qari-OCR** using **Low-Rank Adaptation (LoRA)** with DoRA and RSLoRA for Arabic handwritten text recognition. The base model is NAMAA-Space's Qari-OCR v0.3, built on Qwen2-VL-2B architecture.
 
-While this model achieves reasonable results (CER 0.2635 on blind test), our **main submission [Ketaba-OCR](https://huggingface.co/HassanB4/Ketab-OCR-LoRA)** significantly outperforms it with CER 0.0819.
+While this model achieves reasonable results (CER 0.2635 on blind test), our **main submission [Ketaba-OCR](https://huggingface.co/HassanB4/Ketaba-OCR-LoRA)** significantly outperforms it (CER 0.0819 per-line; 1st on per-line, 3rd on corpus-wide).
 
 The model transcribes cropped line images from Arabic manuscripts into machine-readable text, optimized for the **Omar Al-Saleh Memoir Collection** (1951-1965) written in Ruq'ah and Naskh script variants.
 
@@ -139,7 +140,7 @@ The model was evaluated on both development and blind test sets provided by the 
 
 | Model | Blind CER | Blind WER | Notes |
 | :--- | :---: | :---: | :--- |
-| **Ketaba-OCR (Our Main Model)** | **0.0819** | **0.2588** | 1st Place Winner |
+| **Ketaba-OCR (Our Main Model)** | **0.0819** | **0.2588** | 1st per-line, 3rd corpus-wide |
 | Qari-OCR LoRA (This Model) | 0.2635 | 0.5521 | Additional experiment |
 | Qari-OCR v0.3 (Zero-Shot) | 0.300 | 0.485 | Base model |
 | Arabic OCR 4-bit v2 (Sherif) | 0.3234 | 0.6203 | — |
@@ -150,7 +151,7 @@ The model was evaluated on both development and blind test sets provided by the 
 ## ⚠️ Limitations
 
 * **Domain Specificity**: Optimized for 1950s Ruq'ah/Naskh manuscripts; requires adaptation for other periods/styles
-* **Higher Error Rate**: CER of 0.26 is higher than the HRT-based approach (0.08), suggesting the smaller model capacity limits performance
+* **Higher Error Rate**: CER of 0.26 is higher than the HRT-based Ketaba-OCR (0.08–0.09), suggesting the smaller model capacity limits performance
 * **Degraded Images**: Performance degrades on severely faded or damaged manuscript regions
 * **No Ensemble**: Results are from a single model without ensemble techniques
 
@@ -174,11 +175,11 @@ If you use this work, please cite our main paper:
 
 ```bibtex
 @inproceedings{barmandah2026ketaba,
-    title={{Ketaba-OCR at NakbaNLP 2026 Shared Task: Efficient Adaptation of Vision-Language Models for Handwritten Text Recognition}},
-    author={Barmandah, Hassan and Eldin, Fatimah Emad and Al Jallad, Khloud and Nacer, Omar},
+    title={{Ketaba-OCR at AR-MS NakbaNLP 2026: Efficient Adaptation of Vision-Language Models for Hand Written Recognition}},
+    author={Barmandah, Hassan and Eldin, Fatimah Emad and Al Jallad, Khloud and Nacar, Omer},
     year={2026},
-    booktitle={Proceedings of the 2nd International Workshop on Nakba Narratives as Language Resources (NakbaNLP 2026)},
-    publisher={RASD}
+    booktitle={Proceedings of LREC 2026},
+    note={NakbaNLP 2026 Shared Task}
 }
 ```
 
@@ -187,12 +188,3 @@ If you use this work, please cite our main paper:
 ## 📄 License
 
 This project is licensed under the Apache 2.0 License.
-
----
-
-### Framework Versions
-
-- **PEFT:** 0.14.0+
-- **Transformers:** 4.45.0+
-- **PyTorch:** 2.0.0+
-- **Python:** 3.9+
